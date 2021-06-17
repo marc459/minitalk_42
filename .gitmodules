@@ -1,0 +1,3 @@
+[submodule "ft_printf_42"]
+	path = ft_printf_42
+	url = https://github.com/marc459/ft_printf_42.git
