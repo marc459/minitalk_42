@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marcos <marcos@student.42.fr>              +#+  +:+       +#+         #
+#    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/17 16:49:30 by msantos-          #+#    #+#              #
-#    Updated: 2021/06/24 02:27:45 by marcos           ###   ########.fr        #
+#    Updated: 2021/06/29 17:56:04 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,12 +38,16 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
 #INSTRUCTIONS
-all: ft_printf libft server client
+all: submodule ft_printf libft server client
 
 #EVERY TIME A .O IS CALLED AS AN INSTRUCTION THIS WILL BE CREATED IN OBJ_PATH
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@mkdir -p $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) -o $@ -c $^
+
+submodule:
+	@git submodule init
+	@git submodule update --remote
 
 #CHECKS THE EXISTANCE OF AN COMPILING FTPRINTF LIBRARY 
 ft_printf:
