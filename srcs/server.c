@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 16:49:19 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/18 14:23:57 by marcos           ###   ########.fr       */
+/*   Updated: 2021/07/01 21:50:53 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minitalk.h"
+#include <minitalk.h>
 
 void mysignalhandler(int sig)
 {
@@ -19,13 +19,12 @@ void mysignalhandler(int sig)
 
 int		main(void)
 {
-	//printf("SERVER\n");
-	signal(SIGIO, &mysignalhandler);
+	
+	ft_printf("SERVER PID: %d\n",getpid());
 	while(1)
 	{
-		ft_printf("Server is running\n");
-		sleep(2);
+		signal(SIGIO, &mysignalhandler);
+		sleep(1);
 	}
-	//printf("pid %d\n",pid);
 	return (0);
 }

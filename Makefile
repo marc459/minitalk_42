@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/17 16:49:30 by msantos-          #+#    #+#              #
-#    Updated: 2021/06/29 17:56:04 by msantos-         ###   ########.fr        #
+#    Updated: 2021/07/01 21:57:21 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ CLIENT = client
 LIBFT = libft_42/libft.a
 PRINTF = ft_printf_42/libftprintf.a
 LIBS = $(LIBFT) $(PRINTF)
+
+INCLUDES = -I ./includes
 
 #PATHS
 OBJ_PATH = ./objs
@@ -43,7 +45,7 @@ all: submodule ft_printf libft server client
 #EVERY TIME A .O IS CALLED AS AN INSTRUCTION THIS WILL BE CREATED IN OBJ_PATH
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@mkdir -p $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) -o $@ -c $^
+	@$(CC) $(INCLUDES) -o $@ -c $^
 
 submodule:
 	@git submodule init
