@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/17 16:49:30 by msantos-          #+#    #+#              #
-#    Updated: 2021/07/01 21:57:21 by msantos-         ###   ########.fr        #
+#    Updated: 2021/07/02 21:31:50 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,8 @@ OBJ_PATH = ./objs
 SRC_PATH = ./srcs
 
 #SRCS
-SERVER_SRCS = server.c
-CLIENT_SRCS = client.c
+SERVER_SRCS = server.c utils.c
+CLIENT_SRCS = client.c utils.c
 SERVER_OBJS = $(SERVER_SRCS:.c=.o)
 CLIENT_OBJS = $(CLIENT_SRCS:.c=.o)
 

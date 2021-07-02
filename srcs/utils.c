@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 19:36:46 by msantos-          #+#    #+#             */
-/*   Updated: 2021/07/02 21:33:03 by msantos-         ###   ########.fr       */
+/*   Created: 2021/07/02 21:30:25 by msantos-          #+#    #+#             */
+/*   Updated: 2021/07/02 21:32:53 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef MINITALK_H
-# define MINITALK_H
+#include <minitalk.h>
 
-#include <signal.h>
-#include <stdio.h>
-#include <unistd.h>
-#include "../ft_printf_42/src/printf.h"
-#include "../libft_42/libft.h"
-
-void		printerr(char *err);
-
-# endif
+void		printerr(char *err)
+{
+	ft_printf("Error\n %s",err);
+	exit(-1);
+}
