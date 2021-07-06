@@ -68,9 +68,6 @@ void sig_send_msg ( pid_t id, int signo, char *msg )
 
 
 
-
-
-
 void sig_send_val ( pid_t id, int signo, int val )
 {
 	union sigval *sigdata;
