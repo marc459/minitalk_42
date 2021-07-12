@@ -13,3 +13,9 @@ ps -a		// Show active process and their pid
 kill -l		// List signal names
 killall [program] // Stop all proccess that are called [program]
 kill -s STOP [programpid] // Sends STOP signal to the program with [programpid]
+
+## MINITALK EXPLANATION ##
+How to sent data througth signals. Easy. We need to send character by character and a character would be defined
+by a set of signals USR1 (1) or USR2 (0) that will create a number in binary. for example: 1100001 -> 97 -> a.
+
+This data will be received by a server throught a client.
