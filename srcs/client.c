@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 16:49:15 by msantos-          #+#    #+#             */
-/*   Updated: 2021/07/12 18:41:21 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/07/13 00:46:24 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,17 @@ void	send_char(int pid, unsigned char byte)
 	
 	while (counter)
 	{
-		printf("char -> %d, %d\n",counter, byte);
+		//printf("char -> %d, %d\n",counter, byte);
+		printf("(%d)", byte & counter);
 		if (byte & counter)
 		{
-			printf(" SIGUSR1 ");
+			printf("1 ");
 			if (kill(pid, SIGUSR1) == -1)
 				printerr("bad pid\n");
 		}
 		else
 		{
-			printf(" SIGUSR-2 ");
+			printf("0 ");
 			if (kill(pid, SIGUSR2) == -1)
 				printerr("bad pid\n");
 		}
@@ -49,6 +50,8 @@ int		main(int argc, char **argv)
 
 	//sig_send_msg (atoi(argv[1]), SIGUSR1, "mensaje");
 	//kill(atoi(argv[1]), SIGUSR1);
+	
+	//printf("%d",ft_dectobin(""));
 	if(argv[2][i])
 	{
 		send_char(ft_atoi(argv[1]),argv[2][i]);
